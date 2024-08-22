@@ -1,0 +1,143 @@
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80vh;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 40px 0 120px;
+    width: 60%;
+}
+
+.title {
+    font-size: 80px;
+    font-weight: 600;
+}
+
+.profession {
+    font-size: 32px;
+    margin-bottom: 16px;
+    font-weight: 400px;
+}
+
+.about {
+    font-size: 16px;
+    margin-bottom: 32px;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: baseline;
+    gap: 160px;
+}
+
+.buttonContainer button {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    padding: 4px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.buttonContainer button svg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+    margin-left: 8px;
+}
+
+.buttonContainer button:hover {
+    cursor: pointer;
+}
+
+.buttonContainer button::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1.2px;
+    background-color: #f0f6f5;
+    transition: width 0.8s ease, background-color 0.8s ease;
+}
+
+.buttonContainer button:hover::after,
+.buttonContainer button:focus::after {
+    width: 100%;
+    background-color: #00E0A5;
+    box-shadow: 0 4px 8px #00E0A5, 4px 8px 16px #00E0A5, 8px 16px 32px #00E0A5;
+}
+
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+    max-height: 400px;
+    overflow: hidden;
+}
+
+.image {
+    display: block;
+    max-width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease;
+    filter: grayscale(80%);
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+        height: auto;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .info {
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .title {
+        font-size: 32px;
+    }
+
+    .profession {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .about {
+        font-size: 12px;
+        margin-bottom: 16px;
+    }
+
+    .buttonContainer {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .buttonContainer button {
+        font-size: 20px;
+    }
+
+    .image {
+        width: 80%;
+        height: auto;
+        border-radius: 50%;
+    }
+}
