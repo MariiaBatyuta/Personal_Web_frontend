@@ -1,143 +1,165 @@
-
 .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 80vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80vh;
 }
 
 .info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0 40px 0 120px;
-    width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 40px 0 120px;
+  width: 60%;
 }
 
 .title {
-    font-size: 80px;
-    font-weight: 600;
+  font-size: 80px;
+  font-weight: 600;
 }
 
 .profession {
-    font-size: 32px;
-    margin-bottom: 16px;
-    font-weight: 400px;
+  font-size: 32px;
+  margin-bottom: 16px;
+  font-weight: 400px;
 }
 
 .about {
-    font-size: 16px;
-    margin-bottom: 32px;
+  font-size: 16px;
+  margin-bottom: 32px;
 }
 
 .buttonContainer {
-    display: flex;
-    justify-content: baseline;
-    gap: 160px;
+  display: flex;
+  justify-content: baseline;
+  gap: 160px;
 }
 
 .buttonContainer button {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    text-decoration: none;
-    background-color: transparent;
-    border: none;
-    color: inherit;
-    padding: 4px;
-    font-size: 24px;
-    font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  padding: 4px;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .buttonContainer button svg {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 4px;
-    margin-left: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4px;
+  margin-left: 8px;
 }
 
 .buttonContainer button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .buttonContainer button::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 1.2px;
-    background-color: #f0f6f5;
-    transition: width 0.8s ease, background-color 0.8s ease;
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1.2px;
+  background-color: #f0f6f5;
+  transition:
+    width 0.8s ease,
+    background-color 0.8s ease;
 }
 
 .buttonContainer button:hover::after,
 .buttonContainer button:focus::after {
-    width: 100%;
-    background-color: #00E0A5;
-    box-shadow: 0 4px 8px #00E0A5, 4px 8px 16px #00E0A5, 8px 16px 32px #00E0A5;
+  width: 100%;
+  background-color: #00e0a5;
+  box-shadow:
+    0 4px 8px #00e0a5,
+    4px 8px 16px #00e0a5,
+    8px 16px 32px #00e0a5;
 }
 
 .imageContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 40px;
-    max-height: 400px;
-    overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.circle {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  background-color: #00e0a5;
+  border-radius: 50%;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
 }
 
 .image {
-    display: block;
-    max-width: 100%;
-    border-radius: 50%;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    transition: box-shadow 0.3s ease;
-    filter: grayscale(80%);
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 20px;
 }
 
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column-reverse;
-        align-items: center;
-        text-align: center;
-        height: auto;
-        max-width: 100%;
-        margin: 0;
-    }
+  .container {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    max-width: 100%;
+    margin: 0;
+  }
 
-    .info {
-        margin: 0;
-        max-width: 100%;
-    }
+  .info {
+    margin: 0;
+    max-width: 100%;
+  }
 
-    .title {
-        font-size: 32px;
-    }
+  .title {
+    font-size: 32px;
+  }
 
-    .profession {
-        font-size: 16px;
-        margin-bottom: 8px;
-    }
+  .profession {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
 
-    .about {
-        font-size: 12px;
-        margin-bottom: 16px;
-    }
+  .about {
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
 
-    .buttonContainer {
-        flex-direction: column;
-        gap: 16px;
-    }
+  .buttonContainer {
+    justify-content: space-between;
+    gap: 40px;
+  }
 
-    .buttonContainer button {
-        font-size: 20px;
-    }
+  .buttonContainer button {
+    font-size: 20px;
+  }
 
-    .image {
-        width: 80%;
-        height: auto;
-        border-radius: 50%;
-    }
+  .imageContainer {
+    margin: 0;
+  }
+
+  .image {
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 0;
+  }
 }
