@@ -6,7 +6,7 @@ import { HiOutlineClipboardDocument } from 'react-icons/hi2';
 import { useRef, useState, useEffect, ChangeEvent, FormEvent } from 'react';
 import { toast } from 'react-hot-toast';
 import css from './ContactMe.module.css';
-import { SendMail } from '@/api/sendMail';
+import { SendMail } from '@/api/SendMail';
 
 export interface FormData {
   email: string;
