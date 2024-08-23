@@ -1,20 +1,26 @@
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import Layout from '@/layouts/Layouts';
 import '@/styles/global.css';
 import { AppProps } from 'next/app';
 import { Toaster } from 'react-hot-toast';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { AnimatePresence, motion } from 'framer-motion';
+import Loader from '@/components/Loader/Loader';
 
 const queryClient = new QueryClient();
 
-export default function MyApp({ Component, pageProps, router }: AppProps) {
-  const [isTransitioning, setIsTransitioning] = useState(false);
+export default function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const handleStart = () => setIsTransitioning(true);
-    const handleComplete = () =>
-      setTimeout(() => setIsTransitioning(false), 300);
+    const handleStart = () => {
+      setIsLoading(true);
+    };
+
+    const handleComplete = () => {
+      setIsLoading(false);
+    };
 
     router.events.on('routeChangeStart', handleStart);
     router.events.on('routeChangeComplete', handleComplete);
@@ -30,21 +36,7 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <Toaster />
-      <Layout>
-        <AnimatePresence mode="wait">
-          {!isTransitioning && (
-            <motion.div
-              key={router.route}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.4, ease: 'easeInOut' }}
-            >
-              <Component {...pageProps} />
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </Layout>
+      <Layout>{isLoading ? <Loader /> : <Component {...pageProps} />}</Layout>
     </QueryClientProvider>
   );
 }
