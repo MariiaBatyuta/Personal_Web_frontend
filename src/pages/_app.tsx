@@ -38,7 +38,7 @@ export default function MyApp({ Component, pageProps, router }: AppProps) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.4 }}
+              transition={{ duration: 0.4, ease: 'easeInOut' }}
             >
               <Component {...pageProps} />
             </motion.div>
