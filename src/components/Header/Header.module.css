@@ -1,5 +1,15 @@
 .header {
   position: relative;
+  transition: top 0.4s ease;
+}
+
+.header.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(20, 20, 21, 0.8);
+  z-index: 1000;
 }
 
 .burger {
@@ -78,6 +88,10 @@
     gap: 4px;
     margin: 0;
     z-index: 1000;
+    top: 0;
+    left: 0;
+    padding-top: 60px;
+    overflow: auto;
   }
 
   .navMenu.open .link {

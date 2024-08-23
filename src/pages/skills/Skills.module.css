@@ -85,19 +85,24 @@
 
   .skillsPart {
     flex-wrap: wrap;
-    justify-content: center;
     height: fit-content;
   }
 
   .title {
-    text-align: center;
+    text-align: left;
     font-size: 24px;
+    margin-bottom: 0;
+  }
+
+  .years {
+    font-size: 14px;
   }
 
   .specialization,
   .part {
     text-align: center;
     font-size: 20px;
+    margin: 12px 0;
     display: flex;
     align-items: center;
   }
@@ -113,6 +118,7 @@
   }
 
   .skillsIcon {
-    font-size: 40px;
+    font-size: 32px;
+    margin-bottom: 12px;
   }
 }

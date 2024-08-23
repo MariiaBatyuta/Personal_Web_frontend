@@ -37,15 +37,13 @@ export default function About() {
         </div>
       </div>
       <div className={css.imageContainer}>
-        <div className={css.circle}>
-          <Image
-            src="https://res.cloudinary.com/taskmanagerphoto/PersonalWeb/PersonalPhoto"
-            alt="personal_photo"
-            width={400}
-            height={400}
-            className={css.image}
-          />
-        </div>
+        <Image
+          src="https://res.cloudinary.com/taskmanagerphoto/PersonalWeb/myPhoto"
+          alt="personal_photo"
+          width={400}
+          height={400}
+          className={css.image}
+        />
       </div>
     </div>
   );

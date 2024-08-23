@@ -5,9 +5,8 @@ import { CgMail } from 'react-icons/cg';
 import { HiOutlineClipboardDocument } from 'react-icons/hi2';
 import { useRef, useState, useEffect, ChangeEvent, FormEvent } from 'react';
 import { toast } from 'react-hot-toast';
-import { useMutation } from '@tanstack/react-query';
-import axios from 'axios';
 import css from './ContactMe.module.css';
+import { SendMail } from '@/api/sendMail';
 
 export interface FormData {
   email: string;
@@ -25,7 +24,7 @@ export default function ContactMe() {
       const textToCopy = ref.current?.innerText;
       if (textToCopy) {
         navigator.clipboard.writeText(textToCopy);
-        toast.success('Text successfully copied to the clipboard.');
+        toast.success('Text successfully saved to the clipboard');
       } else {
         throw new Error('No text to copy');
       }
@@ -35,24 +34,8 @@ export default function ContactMe() {
     }
   };
 
-  // React Query mutation for sending mail
-  const mutation = useMutation({
-    mutationFn: async (formData: FormData) => {
-      return axios.post(
-        'https://personal-web-backend-1wxz.onrender.com/api/send-mail',
-        formData,
-        { headers: { 'Content-Type': 'application/json' } }
-      );
-    },
-    onSuccess: () => {
-      toast.success('Message sent successfully!');
-      setFormData({ email: '', subject: '', text: '' });
-      sessionStorage.removeItem('contactFormData');
-    },
-    onError: () => {
-      toast.error('Failed to send message');
-    },
-  });
+  // Send mail
+  const { mutateAsync: sendMessage, isPending } = SendMail();
 
   const [formData, setFormData] = useState<FormData>({
     email: '',
@@ -87,17 +70,17 @@ export default function ContactMe() {
       toast.error('Email is required.');
       isValid = false;
     } else if (!emailRegex.test(email)) {
-      toast.error('Invalid email format.');
+      toast.error('Invalid email format');
       isValid = false;
     }
 
     if (!subject.trim()) {
-      toast.error('Subject is required.');
+      toast.error('Subject is required');
       isValid = false;
     }
 
     if (!text.trim()) {
-      toast.error('Message is required.');
+      toast.error('Message is required');
       isValid = false;
     }
 
@@ -109,7 +92,17 @@ export default function ContactMe() {
 
     if (!validateForm()) return;
 
-    mutation.mutateAsync(formData);
+    try {
+      await sendMessage(formData);
+      setFormData({ email: '', subject: '', text: '' });
+      toast.success(
+        'The message was sent successfully! Thank you. Keeping in touch🙂'
+      );
+      sessionStorage.removeItem('contactFormData');
+    } catch (error) {
+      toast.error('Failed to send message.\nPlease, try again.');
+      console.error(error);
+    }
   };
 
   return (
@@ -151,10 +144,13 @@ export default function ContactMe() {
             >
               <CgMail style={{ fontSize: '40px' }} />
             </a>
-            <HiOutlineClipboardDocument
-              style={{ fontSize: '20px', cursor: 'pointer' }}
-              onClick={() => handleCopySymbolClick(emailRef)}
-            />
+            <div className={css.iconWithTooltip}>
+              <HiOutlineClipboardDocument
+                style={{ fontSize: '20px', cursor: 'pointer' }}
+                onClick={() => handleCopySymbolClick(emailRef)}
+              />
+              <span className={css.tooltip}>Save to clipboard</span>
+            </div>
             <span ref={emailRef} className={css.contactData}>
               mashabatyuta.work@gmail.com
             </span>
@@ -167,10 +163,13 @@ export default function ContactMe() {
             >
               <FaWhatsapp style={{ fontSize: '40px' }} />
             </a>
-            <HiOutlineClipboardDocument
-              style={{ fontSize: '20px', cursor: 'pointer' }}
-              onClick={() => handleCopySymbolClick(whatsappRef)}
-            />
+            <div className={css.iconWithTooltip}>
+              <HiOutlineClipboardDocument
+                style={{ fontSize: '20px', cursor: 'pointer' }}
+                onClick={() => handleCopySymbolClick(whatsappRef)}
+              />
+              <span className={css.tooltip}>Save to clipboard</span>
+            </div>
             <span ref={whatsappRef} className={css.contactData}>
               +380950176180
             </span>
@@ -207,7 +206,7 @@ export default function ContactMe() {
             onChange={handleInputChange}
           />
 
-          {!mutation.isPending && (
+          {!isPending && (
             <button type="submit" className={css.button}>
               Send Message
             </button>
