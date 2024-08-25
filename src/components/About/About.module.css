@@ -162,5 +162,6 @@
   .imageContainer::before {
     left: 50%;
     border-radius: 50% 50% 0 0;
+    height: 100%;
   }
 }
