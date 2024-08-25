@@ -113,15 +113,17 @@
 
 @media (max-width: 768px) {
   .container {
+    display: flex;
     flex-direction: column;
-    height: auto;
-    max-width: 100%;
+    height: calc(100vh - 60px);
     margin: 0;
+    overflow: hidden;
   }
 
   .info {
     margin: 0;
-    max-width: 100%;
+    width: 80%;
+    align-items: center;
   }
 
   .title {
@@ -147,12 +149,18 @@
     font-size: 20px;
   }
 
+  .imageContainer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    flex: 1;
+  }
+
   .imageContainer::before {
     left: 50%;
     border-radius: 50% 50% 0 0;
-  }
-
-  .image {
-    margin-top: 20px;
   }
 }
