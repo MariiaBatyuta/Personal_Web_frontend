@@ -57,7 +57,12 @@
 
 @media (max-width: 768px) {
   .header {
+    position: relative;
     padding-top: 60px;
+  }
+
+  .header.fixed {
+    position: relative;
   }
 
   .navMenu {

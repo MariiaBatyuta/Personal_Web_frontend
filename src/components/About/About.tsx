@@ -38,7 +38,7 @@ export default function About() {
       </div>
       <div className={css.imageContainer}>
         <Image
-          src="https://res.cloudinary.com/taskmanagerphoto/PersonalWeb/myPhoto"
+          src="https://res.cloudinary.com/taskmanagerphoto/PersonalWeb/my-photo"
           alt="personal_photo"
           width={400}
           height={400}

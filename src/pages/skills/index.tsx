@@ -1,8 +1,16 @@
 import { TiHtml5 } from 'react-icons/ti';
-import { IoLogoCss3 } from 'react-icons/io';
-import { IoLogoJavascript } from 'react-icons/io5';
+import { IoLogoCss3, IoLogoJavascript } from 'react-icons/io';
 import { FaReact, FaNodeJs, FaGithub } from 'react-icons/fa';
-import { SiPostman, SiMongodb, SiVite } from 'react-icons/si';
+import {
+  SiTypescript,
+  SiNextdotjs,
+  SiPostman,
+  SiMongodb,
+  SiVite,
+  SiRedux,
+  SiTailwindcss,
+  SiExpress,
+} from 'react-icons/si';
 import { VscVscode } from 'react-icons/vsc';
 import css from './Skills.module.css';
 
@@ -84,7 +92,12 @@ export default function SkillsPage() {
                 <IoLogoCss3 className={css.skillsIcon} />
                 <IoLogoJavascript className={css.skillsIcon} />
                 <FaReact className={css.skillsIcon} />
+                <SiRedux className={css.skillsIcon} />
+                <SiTypescript className={css.skillsIcon} />
                 <FaNodeJs className={css.skillsIcon} />
+                <SiExpress className={css.skillsIcon} />
+                <SiNextdotjs className={css.skillsIcon} />
+                <SiTailwindcss className={css.skillsIcon} />
               </td>
             </tr>
             <tr>

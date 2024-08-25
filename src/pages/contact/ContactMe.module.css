@@ -2,13 +2,13 @@
   display: flex;
   justify-content: flex-start;
   gap: 40px;
-  margin: 20px;
+  margin: 40px;
 }
 
 .socialMedia {
   display: flex;
   flex-direction: column;
-  margin: 20px 0 20px 20px;
+  margin: 20px 0 20px 40px;
   width: 50%;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .title {
-  font-size: 28px;
+  font-size: 32px;
   margin-bottom: 44px;
   font-weight: 600;
 }
