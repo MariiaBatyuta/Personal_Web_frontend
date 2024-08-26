@@ -2,14 +2,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: calc(100vh - 72px);
+  overflow: hidden;
 }
 
 .info {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 40px 0 120px;
+  margin: 0 40px;
   width: 50%;
+  height: auto;
 }
 
 .title {
@@ -83,9 +86,13 @@
 }
 
 .imageContainer {
-  position: relative;
+  position: absolute; 
+  bottom: 0;
+  right: 0;
   width: 50%;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 72px);
+  max-width: 50%;
+  z-index: 1;
   overflow: hidden;
 }
 
@@ -105,24 +112,25 @@
 
 .image {
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: 100vh;
+  height: 100vh;
   object-fit: cover;
   z-index: 2;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .container {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 60px);
-    margin: 0;
-    overflow: hidden;
+    justify-content: space-between;
+    height: 100vh;
   }
 
   .info {
     margin: 0;
     width: 80%;
+    height: auto;
+    margin-top: 60px;
     align-items: center;
   }
 
@@ -150,12 +158,11 @@
   }
 
   .imageContainer {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
     position: relative;
     overflow: hidden;
+    max-width: 100%;
     width: 100%;
+    height: 60vh;
     flex: 1;
   }
 
@@ -163,5 +170,13 @@
     left: 50%;
     border-radius: 50% 50% 0 0;
     height: 100%;
+    width: 200%;
   }
+
+  .image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
 }

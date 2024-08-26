@@ -84,7 +84,7 @@ export default function SkillsPage() {
         <table className={css.table}>
           <tbody>
             <tr>
-              <td className={css.part}>Frontend & Backend Tools</td>
+              <td className={css.part}>Frontend & Backend</td>
             </tr>
             <tr>
               <td className={css.skillsPart}>

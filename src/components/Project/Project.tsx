@@ -29,9 +29,9 @@ export default function Project({ project }: ProjectPropsType) {
               Web
             </a>
           )}
-          <a href={project.git_url} target="_blank" rel="noopener noreferrer">
+          {project.git_url && <a href={project.git_url} target="_blank" rel="noopener noreferrer">
             <FaGithub />
-          </a>
+          </a>}
           {project.backend_url && (
             <a
               href={project.backend_url}

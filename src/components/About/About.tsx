@@ -26,7 +26,11 @@ export default function About() {
           technical and managerial expertise to every project.
         </p>
         <div className={css.buttonContainer}>
-          <a href="#" download onClick={handleDownloadClick}>
+          <a
+            href={process.env.NEXT_PUBLIC_CV_URL}
+            download
+            onClick={handleDownloadClick}
+          >
             <button>
               CV <MdOutlineFileDownload />
             </button>

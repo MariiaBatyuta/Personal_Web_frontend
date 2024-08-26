@@ -171,7 +171,7 @@ export default function ContactMe() {
               <span className={css.tooltip}>Save to clipboard</span>
             </div>
             <span ref={whatsappRef} className={css.contactData}>
-              +380950176180
+              +4368181801045
             </span>
           </li>
         </ul>

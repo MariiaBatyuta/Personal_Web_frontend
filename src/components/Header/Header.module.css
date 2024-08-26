@@ -55,13 +55,8 @@
     8px 16px 32px #00e0a5;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .header {
-    position: relative;
-    padding-top: 60px;
-  }
-
-  .header.fixed {
     position: relative;
   }
 

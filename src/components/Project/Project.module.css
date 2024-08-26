@@ -60,7 +60,7 @@
 .projectLink {
   display: flex;
   justify-content: start;
-  gap: 40px;
+  gap: 32px;
 }
 
 .projectLink a {
@@ -123,16 +123,19 @@
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 650px) and (max-width: 768px) {
   .projectCard {
     display: flex;
     flex-direction: column-reverse;
-    width: 100%;
     gap: 8px;
   }
 
   .projectInfo {
     max-width: 100%;
+  }
+
+  .projectLink {
+    gap: 12px;
   }
 
   .imgContainer {
