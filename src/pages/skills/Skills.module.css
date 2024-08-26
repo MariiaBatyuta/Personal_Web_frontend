@@ -69,10 +69,11 @@
 
 @media (max-width: 649px) {
   .container {
+    display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0;
-    margin: 8px;
+    margin: 12px;
     width: 100%;
   }
 
@@ -119,9 +120,24 @@
 
 @media (min-width: 650px) and (max-width: 1024px) {
   .container {
-    margin: 0 40px;
-    gap: 20px;
-    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+    width: auto;
+  }
+
+  .experience,
+  .skills {
+    margin-top: 0;
+  }
+
+  .title {
+    font-size: 28px;
+    margin-bottom: 0;
+  }
+
+  .info {
+    padding-bottom: 20px;
   }
 
   .part {

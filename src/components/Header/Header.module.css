@@ -55,7 +55,7 @@
     8px 16px 32px #00e0a5;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 748px) {
   .header {
     position: relative;
   }

@@ -86,7 +86,7 @@
 }
 
 .imageContainer {
-  position: absolute; 
+  position: absolute;
   bottom: 0;
   right: 0;
   width: 50%;
@@ -118,7 +118,7 @@
   z-index: 2;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 748px) {
   .container {
     display: flex;
     flex-direction: column;
@@ -173,10 +173,47 @@
     width: 200%;
   }
 
-  .image{
+  .image {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
+}
 
+@media (min-width: 749px) and (max-width: 1024px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+  }
+
+  .info {
+    margin: 0;
+    width: 80%;
+    height: auto;
+    margin-top: 60px;
+    align-items: center;
+  }
+  .imageContainer {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    width: 100%;
+    height: 60vh;
+    flex: 1;
+  }
+
+  .imageContainer::before {
+    left: 50%;
+    border-radius: 50% 50% 0 0;
+    height: 100%;
+    width: 200%;
+  }
+
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
