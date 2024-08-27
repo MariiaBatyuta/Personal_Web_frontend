@@ -20,8 +20,7 @@ const projectsData: ProjectsDataType[] = [
       'Portfolio website featuring a custom design I created myself. Fully responsive for a seamless experience across devices, with backend integration for contact form submissions. It highlights my skills, experience, and projects in a clean, modern way.',
     skills:
       'Next.js, React, TypeScript, CSS, Responsive Design, UI/UX, Backend Integration, Node.js, Express',
-    web_url:
-      'https://mariia-batiuta-fullstack-developer-personal-web.vercel.app/',
+    web_url: '',
     git_url: 'https://github.com/MariiaBatyuta/Personal_Web_frontend',
     preload_img:
       'https://res.cloudinary.com/taskmanagerphoto/PersonalWeb/ProjectPreviews/FullstackPortfolio',
