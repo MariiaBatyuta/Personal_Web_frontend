@@ -144,13 +144,10 @@ export default function ContactMe() {
             >
               <CgMail style={{ fontSize: '40px' }} />
             </a>
-            <div className={css.iconWithTooltip}>
-              <HiOutlineClipboardDocument
-                style={{ fontSize: '20px', cursor: 'pointer' }}
-                onClick={() => handleCopySymbolClick(emailRef)}
-              />
-              <span className={css.tooltip}>Save to clipboard</span>
-            </div>
+            <HiOutlineClipboardDocument
+              style={{ fontSize: '20px', cursor: 'pointer' }}
+              onClick={() => handleCopySymbolClick(emailRef)}
+            />
             <span ref={emailRef} className={css.contactData}>
               mashabatyuta.work@gmail.com
             </span>
@@ -163,13 +160,10 @@ export default function ContactMe() {
             >
               <FaWhatsapp style={{ fontSize: '40px' }} />
             </a>
-            <div className={css.iconWithTooltip}>
-              <HiOutlineClipboardDocument
-                style={{ fontSize: '20px', cursor: 'pointer' }}
-                onClick={() => handleCopySymbolClick(whatsappRef)}
-              />
-              <span className={css.tooltip}>Save to clipboard</span>
-            </div>
+            <HiOutlineClipboardDocument
+              style={{ fontSize: '20px', cursor: 'pointer' }}
+              onClick={() => handleCopySymbolClick(whatsappRef)}
+            />
             <span ref={whatsappRef} className={css.contactData}>
               +4368181801045
             </span>

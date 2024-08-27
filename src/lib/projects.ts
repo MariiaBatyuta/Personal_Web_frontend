@@ -40,7 +40,7 @@ const projectsData: ProjectsDataType[] = [
       'https://res.cloudinary.com/taskmanagerphoto/PersonalWeb/ProjectPreviews/BackEnd',
     web_url: '',
     backend_url: 'https://github.com/MariiaBatyuta/goit-node-rest-api',
-    swagger: 'http::/test.com',
+    swagger: '',
   },
   {
     id: 6,
