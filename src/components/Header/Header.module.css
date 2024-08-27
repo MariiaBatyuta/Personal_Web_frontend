@@ -66,8 +66,8 @@
 
   .burger {
     position: fixed;
-    top: 4px;
-    right: 4px;
+    top: 0;
+    right: 0;
     display: flex;
     font-size: 40px;
     background-color: transparent;
