@@ -27,6 +27,7 @@ export default function About() {
         </p>
         <div className={css.buttonContainer}>
           <a
+            // CV link
             href={process.env.NEXT_PUBLIC_CV_URL}
             download
             onClick={handleDownloadClick}
