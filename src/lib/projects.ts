@@ -15,15 +15,15 @@ const projectsData: ProjectsDataType[] = [
   {
     id: 8,
     project_type: 'Personal Project',
-    project_name: 'Fullstack Portfolio',
+    project_name: 'Portfolio Web',
     description:
-      'Portfolio website featuring a custom design I created myself. Fully responsive for a seamless experience across devices, with backend integration for contact form submissions. It highlights my skills, experience, and projects in a clean, modern way.',
+    'A personal solution platform showcasing my expertise in AI integration, automation, and end-to-end solution development, demonstrating my ability to design, implement, and deploy scalable, professional solutions. The project highlights my skills in system architecture, UI/UX, responsive design, and backend integration, serving as a central hub for my professional projects and solutions.',
     skills:
-      'Next.js, React, TypeScript, CSS, Responsive Design, UI/UX, Backend Integration, Node.js, Express',
+      'Next.js, React, TypeScript, CSS, Responsive Design, UI/UX, Backend Integration, Node.js, Express, Workflow Automation',
     web_url: '',
     git_url: 'https://github.com/MariiaBatyuta/Personal_Web_frontend',
     preload_img:
-      'https://res.cloudinary.com/taskmanagerphoto/PersonalWeb/ProjectPreviews/FullstackPortfolio',
+      'https://res.cloudinary.com/taskmanagerphoto/image/upload/v1756740938/Screenshot_2025-09-01_at_17.35.23_pgbl5u.png',
     backend_url: 'https://github.com/MariiaBatyuta/Personal_Web_backend',
     swagger: 'https://personal-web-backend-1wxz.onrender.com/api-doc',
   },

@@ -17,13 +17,9 @@ export default function About() {
     <div className={css.container}>
       <div className={css.info}>
         <h1 className={css.title}>Mariia Batiuta</h1>
-        <h3 className={css.profession}>Fullstack Developer</h3>
+        <h3 className={css.profession}>Full-Stack Developer | AI & Automation Specialist</h3>
         <p className={css.about}>
-          I am a Full Stack Developer with a strong background in project
-          management and a proven track record of successfully leading multiple
-          projects. With over three years of experience in managing complex
-          tasks and collaborating with international clients, I bring both
-          technical and managerial expertise to every project.
+        I am a Full-Stack Developer with hands-on experience in AI integration, automation, and no-code/low-code development. I build end-to-end solutions, from full-stack web applications to intelligent workflows that streamline processes and deliver real-world impact. Combining technical expertise with problem-solving and innovation, I create projects that are both functional and business-ready.
         </p>
         <div className={css.buttonContainer}>
           <a
@@ -43,11 +39,12 @@ export default function About() {
       </div>
       <div className={css.imageContainer}>
         <Image
-          src="https://res.cloudinary.com/taskmanagerphoto/PersonalWeb/my-photo"
+          src="https://res.cloudinary.com/taskmanagerphoto/image/upload/v1756726358/snapedit_1756726296091_vdabcv.png"
           alt="personal_photo"
           width={400}
           height={400}
           className={css.image}
+          priority
         />
       </div>
     </div>
